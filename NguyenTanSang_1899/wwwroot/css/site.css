@@ -1,0 +1,86 @@
+/* FONT */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fb;
+}
+
+/* NAVBAR */
+.custom-navbar {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+/* NAV LINK */
+.navbar .nav-link {
+    color: #fff !important;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+    .navbar .nav-link:hover {
+        color: #ffc107 !important;
+    }
+
+/* GI? HÀNG BADGE */
+.cart-badge {
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: -10px;
+}
+
+/* USER */
+.user-info {
+    color: #ffd700 !important;
+    font-weight: 500;
+}
+
+/* BUTTON */
+.login-btn {
+    color: #00d4ff !important;
+}
+
+.logout-btn {
+    color: #ff4d4d !important;
+}
+
+/* CARD */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* TABLE */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table thead {
+        background: #2a5298;
+        color: white;
+    }
+
+/* BUTTON ??NG KÝ */
+.btn-success {
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+/* FOOTER */
+.footer {
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}

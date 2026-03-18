@@ -1,0 +1,42 @@
+﻿@model NguyenTanSang_1899.Models.SinhVien
+
+<h2>Sửa sinh viên</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="MaSV" />
+
+    <div class="form-group">
+        <label>Họ tên</label>
+        <input asp-for="HoTen" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Giới tính</label>
+        <input asp-for="GioiTinh" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Ngày sinh</label>
+        <input asp-for="NgaySinh" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Ảnh hiện tại</label><br />
+        <img src="@Model.Hinh" width="100" />
+    </div>
+
+    <div class="form-group">
+        <label>Đổi ảnh</label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Ngành</label>
+        <select asp-for="MaNganh" asp-items="ViewBag.MaNganh" class="form-control"></select>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-action="Index">Quay lại</a>
+</form>

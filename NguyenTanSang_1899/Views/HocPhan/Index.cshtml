@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NguyenTanSang_1899.Models.HocPhan>
+
+<h2>DANH SÁCH HỌC PHẦN</h2>
+
+@if (TempData["msg"] != null)
+{
+    <p style="color:red">@TempData["msg"]</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã HP</th>
+            <th>Tên HP</th>
+            <th>Tín chỉ</th>
+            <th>Còn lại</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaHP</td>
+                <td>@item.TenHP</td>
+                <td>@item.SoTinChi</td>
+                <td>@item.SoLuong</td>
+                <td>
+                    <a asp-action="DangKy"
+                       asp-route-id="@item.MaHP"
+                       class="btn btn-success"
+                       onclick="return confirm('Bạn có chắc muốn đăng ký?');">
+                        Đăng ký
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

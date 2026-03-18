@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NguyenTanSang_1899.Models.SinhVien>
+
+@{
+    ViewData["Title"] = "Trang Sinh Viên";
+}
+
+<h2 style="font-weight:bold;">TRANG SINH VIÊN</h2>
+
+<p>
+    <a asp-action="Create" style="color:blue;">Add Student</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>MaSV</th>
+            <th>HoTen</th>
+            <th>GioiTinh</th>
+            <th>NgaySinh</th>
+            <th>Hinh</th>
+            <th>MaNganh</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaSV</td>
+                <td>@item.HoTen</td>
+                <td>@item.GioiTinh</td>
+                <td>@item.NgaySinh</td>
+
+                <td>
+                    <img src="@item.Hinh" width="120" height="120" />
+                </td>
+
+                <td>@item.MaNganh</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaSV">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MaSV">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MaSV">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+<footer>
+    <p>© 2023 - Your Name</p>
+</footer>

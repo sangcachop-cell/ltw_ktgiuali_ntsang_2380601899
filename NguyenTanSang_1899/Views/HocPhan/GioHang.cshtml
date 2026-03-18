@@ -1,0 +1,41 @@
+﻿@model IEnumerable<NguyenTanSang_1899.Models.ChiTietDangKy>
+
+<h2>🛒 GIỎ HÀNG</h2>
+
+@{
+    var tongMon = Model.Count();
+    var tongTinChi = Model.Sum(x => x.HocPhan.SoTinChi ?? 0);
+}
+
+<p><b>Số học phần:</b> @tongMon</p>
+<p><b>Tổng tín chỉ:</b> @tongTinChi</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã HP</th>
+            <th>Tên HP</th>
+            <th>Tín chỉ</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaHP</td>
+                <td>@item.HocPhan.TenHP</td>
+                <td>@item.HocPhan.SoTinChi</td>
+                <td>
+                    <a asp-action="Xoa"
+                       asp-route-id="@item.MaHP"
+                       class="btn btn-danger"
+                       onclick="return confirm('Xóa học phần này?');">
+                        Xóa
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿@model NguyenTanSang_1899.Models.SinhVien
+
+<h2>Chi tiết sinh viên</h2>
+
+<div>
+    <p><b>Mã SV:</b> @Model.MaSV</p>
+    <p><b>Họ tên:</b> @Model.HoTen</p>
+    <p><b>Giới tính:</b> @Model.GioiTinh</p>
+    <p><b>Ngày sinh:</b> @Model.NgaySinh?.ToString("dd/MM/yyyy")</p>
+    <p><b>Ngành:</b> @Model.NganhHoc?.TenNganh</p>
+    <p><b>Ảnh:</b></p>
+    <img src="@Model.Hinh" width="150" />
+</div>
+
+<br />
+<a asp-action="Edit" asp-route-id="@Model.MaSV">Edit</a> |
+<a asp-action="Index">Quay lại</a>

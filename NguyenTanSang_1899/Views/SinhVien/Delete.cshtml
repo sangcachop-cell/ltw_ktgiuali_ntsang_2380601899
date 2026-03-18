@@ -1,0 +1,16 @@
+﻿@model NguyenTanSang_1899.Models.SinhVien
+
+<h2>Xóa sinh viên</h2>
+
+<h4>Bạn có chắc muốn xóa?</h4>
+
+<div>
+    <p><b>@Model.HoTen</b></p>
+    <img src="@Model.Hinh" width="120" />
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="MaSV" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index">Hủy</a>
+</form>
